@@ -15,5 +15,10 @@ public class DataRegistery {
 	public static SessionFactory getSessionFactory() {
 		return context.getBean("sessionFactory", SessionFactory.class);
 	}
+
+
+
+
+
 	
 }
