@@ -13,7 +13,6 @@ import org.hibernate.criterion.Restrictions;
 public class MySqlDaoFactory {
 	
 	/**
-	 * Î´Íê³É
 	 * 
 	 * @param name
 	 * @param query

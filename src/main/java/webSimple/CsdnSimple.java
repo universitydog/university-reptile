@@ -25,12 +25,6 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
 
-/**
- * http://blog.csdn.net 数据爬取
- * 
- * @author 唐太明
- *
- */
 public class CsdnSimple implements PageProcessor {
 	
 	private Site site = Site
@@ -74,9 +68,9 @@ public class CsdnSimple implements PageProcessor {
 				String classA = element3.children().get(x).className();
 				if (classA.equals("article_l")) {
 					Elements aElement = element3.children().get(x).getElementsByTag("a");
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^获取tags个数:" + aElement.size());
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^" + aElement.size());
 					for (int y = 0; y < aElement.size(); y++) {
-						//获取的tags
+						//锟斤拷取锟斤拷tags
 						String t = aElement.get(y).text();
 						System.out.println((y + 1) + ":" + t);
 						tagsBuffer.append(t + ",");

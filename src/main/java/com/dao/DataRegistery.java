@@ -9,7 +9,7 @@ public class DataRegistery {
 	private static ApplicationContext context = new ClassPathXmlApplicationContext("com/etc/spring/spring-date.xml");
 	
 	/**
-	 * ªÒ»°SessionFactory
+	 * 
 	 * @return SessionFactory
 	 */
 	public static SessionFactory getSessionFactory() {

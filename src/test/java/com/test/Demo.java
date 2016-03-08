@@ -17,7 +17,7 @@ public class Demo {
 	public void testA() {
 //		MySqlDaoFactory mf = new MySqlDaoFactory();
 //		Map<String, Object> query = new HashMap<>();
-//		query.put("title", "Kafka(一)：基础");
+//		query.put("title", "");
 //		Dumper.dump(mf.find(CsdnEntity.class, query));
 		
 		
@@ -40,9 +40,9 @@ public class Demo {
 		Dumper.dump(type);
 		Author a = new Author();
 		a.setId("FeeLang");
-		a.setRealName("梁飞");
+		a.setRealName("");
 		a.setNickName("feelang");
-		a.setIntroduce("一介码农");
+		a.setIntroduce("");
 		a.setRank(2371);
 		a.setLove(0);
 		a.setCreateTime("2016-03-08 00:00:00");

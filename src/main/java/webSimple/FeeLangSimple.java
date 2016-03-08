@@ -66,9 +66,8 @@ public class FeeLangSimple implements PageProcessor {
 				String classA = element3.children().get(x).className();
 				if (classA.equals("article_l")) {
 					Elements aElement = element3.children().get(x).getElementsByTag("a");
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^获取tags个数:" + aElement.size());
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^:" + aElement.size());
 					for (int y = 0; y < aElement.size(); y++) {
-						//获取的tags
 						String t = aElement.get(y).text();
 						System.out.println((y + 1) + ":" + t);
 						tagsBuffer.append(t + ",");

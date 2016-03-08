@@ -7,13 +7,7 @@ import java.util.List;
 public abstract class ScriptUtil {
 	public static final int EXPRT_NUMBER = 50000;
 
-	/**
-	 * 按照number数切割List
-	 *
-	 * @param list
-	 * @param number
-	 * @return
-	 */
+
 	public <T> List<List<T>> burstList(List<T> list, Integer number) {
 		List<List<T>> result = new ArrayList<List<T>>();
 		if (list != null) {
@@ -40,21 +34,9 @@ public abstract class ScriptUtil {
 		return result;
 	}
 
-	/**
-	 * 设置数据结构
-	 * 
-	 * @param <T>
-	 * @param list
-	 * @return
-	 */
+
 	public abstract <T> ArrayList<ArrayList<String>> operationalDataToArray(List<T> list);
 
-	/**
-	 * 写入Exl
-	 * 
-	 * @param data
-	 * @param fileName
-	 * @return
-	 */
+
 	public abstract File arrayToXSL(ArrayList<ArrayList<String>> data, String fileName);
 }

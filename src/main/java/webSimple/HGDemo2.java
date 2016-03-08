@@ -47,7 +47,7 @@ public class HGDemo2 extends ScriptUtil implements PageProcessor {
 			System.out.println(x++);
 			
 			List<String> urlList = new ArrayList<>();
-			//获取分页文本
+			//锟斤拷取锟斤拷页锟侥憋拷
 			String strPage = page.getHtml().xpath("//form[@name=\"page_form\"]/table/tbody/tr/td/div/tidyText()").toString();
 			String reg = "[\\d]+";
 			Pattern pattern = Pattern.compile(reg);
@@ -80,11 +80,9 @@ public class HGDemo2 extends ScriptUtil implements PageProcessor {
 		.run();
 		HGDemo2 h2 = new HGDemo2();
 		List<String> list = HGDemo2.TITLE;
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~查询数量: " + list.size());
 		String fileName = "E:\\HGData\\hg_" + System.currentTimeMillis() + ".xls";
 		ArrayList<ArrayList<String>> ll = h2.operationalDataToArray(list);
 		h2.arrayToXSL(ll, fileName);
-		System.out.println("+++++++++处理" + list.size() + "条数据");
 		
 	}
 
@@ -92,7 +90,7 @@ public class HGDemo2 extends ScriptUtil implements PageProcessor {
 	public <T> ArrayList<ArrayList<String>> operationalDataToArray(List<T> list) {
 		ArrayList<ArrayList<String>> temp = new ArrayList<ArrayList<String>>();
 		ArrayList<String> head = new ArrayList<String>();
-		head.add("标题");
+		head.add("锟斤拷锟斤拷");
 		temp.add(head);
 
 		for (int x = 0; x < list.size(); x++) {
