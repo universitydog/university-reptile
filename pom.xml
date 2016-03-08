@@ -14,17 +14,23 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.21</version>
+		</dependency>
+
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>MinUtil</groupId>
 			<artifactId>MinUtil</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>cn.wanghaomiao</groupId>
 			<artifactId>SeimiCrawler</artifactId>
@@ -80,20 +86,20 @@
 			<version>2.4</version>
 		</dependency>
 		<dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>3.7</version>
-        </dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.7</version>
+		</dependency>
 
 		<!-- HSSFWorkbook -->
 		<dependency>
@@ -118,7 +124,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- c3p0 -->
 		<dependency>
 			<groupId>c3p0</groupId>

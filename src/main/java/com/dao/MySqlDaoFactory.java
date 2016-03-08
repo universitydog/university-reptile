@@ -177,7 +177,13 @@ public class MySqlDaoFactory {
 		try {
 			session = sf.openSession();
 			tr = session.beginTransaction();
-			isSave = (Integer) session.save(name.getName(), obj);
+			Object object = session.save(name.getName(), obj);
+			if (object instanceof String) {
+				System.out.println("~~~~~~~~~~~~~~~~" + object);
+				isSave = (object == null ? 0 : 1);
+			} else {
+				isSave = (Integer) object;
+			}
 			tr.commit();
 		} catch (HibernateException e) {
 			System.out.println("(ERROR) [" + name.getName() + "] save error");

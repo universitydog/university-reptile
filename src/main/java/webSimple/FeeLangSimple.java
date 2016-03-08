@@ -16,7 +16,6 @@ import org.jsoup.select.Elements;
 import com.dao.MySqlDaoFactory;
 import com.orm.Article;
 import com.orm.Author;
-import com.orm.CsdnEntity;
 import com.orm.Type;
 import com.ttm.util.Dumper;
 
@@ -25,14 +24,7 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
 
-/**
- * http://blog.csdn.net 数据爬取
- * 
- * @author 唐太明
- *
- */
-public class CsdnSimple implements PageProcessor {
-	
+public class FeeLangSimple implements PageProcessor {
 	private Site site = Site
             .me()
             .setDomain("http://blog.csdn.net")
@@ -41,10 +33,10 @@ public class CsdnSimple implements PageProcessor {
                     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.65 Safari/537.31");
 
 	//http://blog.csdn.net/yfkiss/article/list/1
-	private static final String GET_LIST = "http://blog\\.csdn\\.net/yfkiss/article/list/\\d+";
+	private static final String GET_LIST = "http://blog\\.csdn\\.net/FeeLang/article/list/\\d+";
 	
 	//http://blog.csdn.net/yfkiss/article/details/23775917
-	private static final String GET_CONTENT = "http://blog\\.csdn\\.net/yfkiss/article/details/\\d+";
+	private static final String GET_CONTENT = "http://blog\\.csdn\\.net/FeeLang/article/details/\\d+";
 	
 	private List<String> urlList = new ArrayList<>();
 	
@@ -88,9 +80,9 @@ public class CsdnSimple implements PageProcessor {
 			tags = StringUtils.removeEnd(tagsBuffer.toString(), ",");
 			
 			Author author = new Author();
-			author.setId("yfkiss");
+			author.setId("FeeLang");
 			Type type = new Type();
-			type.setId(1);
+			type.setId(2);
 			Article article = new Article();
 			article.setAuthorId(author);
 			article.setTypeId(type);
@@ -118,11 +110,11 @@ public class CsdnSimple implements PageProcessor {
 	}
 	
 	public static void main(String[] args) {
-		Spider.create(new CsdnSimple())
-		.addUrl("http://blog.csdn.net/yfkiss/article/list/1")
+		Spider.create(new FeeLangSimple())
+		.addUrl("http://blog.csdn.net/FeeLang/article/list/1")
 		.thread(5)
 		.run();
-		CsdnSimple.addObj(csdnList);
+		FeeLangSimple.addObj(csdnList);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -143,5 +135,4 @@ public class CsdnSimple implements PageProcessor {
 			mf.save(Article.class, newList.get(x));
 		};
 	}
-	
 }
