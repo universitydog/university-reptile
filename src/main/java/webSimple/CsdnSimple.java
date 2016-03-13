@@ -1,8 +1,5 @@
 package webSimple;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +13,6 @@ import org.jsoup.select.Elements;
 import com.dao.MySqlDaoFactory;
 import com.orm.Article;
 import com.orm.Author;
-import com.orm.CsdnEntity;
 import com.orm.Type;
 import com.ttm.util.Dumper;
 
@@ -50,11 +46,11 @@ public class CsdnSimple implements PageProcessor {
 			page.addTargetRequests(page.getHtml().xpath("//span[@class=\"link_title\"]").links().regex(GET_CONTENT).all());
 			page.addTargetRequests(page.getHtml().xpath("//div[@class=\"pagelist\"]").links().regex(GET_LIST).all());
 		} else {
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 			String title = page.getHtml().xpath("//span[@class=\"link_title\"]/a/allText()").toString();
 			String titleDate = page.getHtml().xpath("//span[@class=\"link_postdate\"]/allText()").toString();
 			String content_url = page.getUrl().toString();
-			String inputDate = LocalDateTime.now(ZoneId.of("Asia/Shanghai")).format(formatter);
+//			String inputDate = LocalDateTime.now(ZoneId.of("Asia/Shanghai")).format(formatter);
 			String tags = page.getHtml().xpath("//div[@class=\"article_l\"]//span[@class=\"link_categories\"]").toString();
 
 			Document document = page.getHtml().getDocument();
@@ -89,7 +85,7 @@ public class CsdnSimple implements PageProcessor {
 			article.setAuthorId(author);
 			article.setTypeId(type);
 			article.setUrl(content_url);
-			article.setInputDate(inputDate);
+//			article.setInputDate(inputDate);
 			article.setTitle(title);
 			article.setTitleDate(titleDate);
 			if (StringUtils.isEmpty(tags)) {
